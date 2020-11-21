@@ -1,27 +1,22 @@
 .footer{
-    /* background-image: url(../img/footer.jpg);
-    width: 100%;
-    height: auto;
-    background-blend-mode: soft-light;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center; */
     background-color: #191919;
     padding: 3% 0 1% 0;
     background-repeat: no-repeat;
 }
 
-/* .footer .first img{
-    width: 12%;
-    height: auto;
-    border: 1px solid white;
-    border-radius: 2px;
-} */
+.footer .first
+{
+    padding: 10px 0;
+}
 
 .footer .first h3{
     font-size: 17px;
     color: white;
     font-weight: bold;
+}
+
+.footer .first h3 a {
+    float: right;
 }
 
 .footer .first p{
@@ -51,6 +46,14 @@
 .footer .first ul{
     list-style: none;
     padding-left: 0;
+}
+
+.footer .first ul {
+    display: none;
+}
+
+.footer .first ul.open {
+    display: block;
 }
 
 .footer .first li{
