@@ -1,25 +1,26 @@
 .header
 {
-    background-color: var(--color-black);
+    background-color: var(--color-white);
     padding: 1% 0;
 }
-
-/* .header .logo img
-{
-    width: 35%;
-    height: auto;
-} */
 
 .header .logo 
 {
     padding-top: 2px;
 }
 
+.header .logo i
+{
+    color: orange;
+    padding-right: 10px;
+    font-size: 25px;
+}
+
 .header .logo a
 {
-    color: var(--color-white);
+    font-size: 25px;
     font-weight: bold;
-    font-size: 30px;
+    color: var(--color-black);;
 }
 
 .header .nav
@@ -36,21 +37,123 @@
 
 .header .nav li 
 {
-    padding: 0 16px;
-    font-size: 15px;
+    padding: 0 15px;
+    font-size: 13px;
     font-weight: bold;
-    display: block;
-    border-bottom: 1px solid transparent
 }
 
 .header .nav a
 {
-    color: var(--color-white);
-    text-align: center;
-    padding-bottom: 4px;
+    color: var(--color-black);
 }
 
 .header .nav li a:hover
 {
-    border-bottom: 2px solid #df0101;
+    color: var(--color-orange);
+    transition: 0.5s;
+    opacity: 0.5s;
+    
+}
+
+/* menu button  */
+
+.mobile-menu-toggle {
+    display: inline-block;
+    display: none;
+    cursor: pointer;
+    color: var(--color-black);
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    z-index: 2;
+}
+
+.mobile-menu-toggle:hover { color: var(--color-black); }
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--color-black);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+    background-color: var(--color-white);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+    background-color: var(--color-white);
+}
+
+/* menu desktop and mobile switching on responsive  */
+
+.desktop-menu {
+    display: block;
+}
+
+/* sidemenu */
+
+.sidenav 
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    background-color: var(--color-black);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav.open {
+    left: 0;
+}
+
+.sidenav.close {
+    left: -100%;
+}
+
+.sidenav a 
+{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--color-white);
+    display: block;
+    text-align: center;
+}
+
+.sidenav a:hover { 
+    color: var(--color-orange); 
+}
+
+.sidenav .logo i{ 
+    font-size: 40px;
+}
+
+/* menu desktop and mobile switching on responsive  */
+@media only screen and (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .header .nav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header{
+        padding: 2% 0;
+    }
 }
