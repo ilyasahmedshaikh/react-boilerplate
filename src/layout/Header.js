@@ -20,11 +20,11 @@ function Header() {
                         <div className="col-sm-8 col-md-8 col-lg-8">
                             <div className="nav">
                                  <ul>
-                                    <li><Link to="/react-boilerplate/home">Home</Link></li>
-                                    <li><Link to="/react-boilerplate/services">Services</Link></li>
-                                    <li><Link to="/react-boilerplate/about">About</Link></li>
-                                    <li><Link to="/react-boilerplate/contact">Contact</Link></li>
-                                    <li><Link to="/react-boilerplate/login">Login</Link></li>
+                                    <li><Link to="/home">Home</Link></li>
+                                    <li><Link to="/services">Services</Link></li>
+                                    <li><Link to="/about">About</Link></li>
+                                    <li><Link to="/contact">Contact</Link></li>
+                                    <li><Link to="/login">Login</Link></li>
                                  </ul>
                             </div>
                         </div>
