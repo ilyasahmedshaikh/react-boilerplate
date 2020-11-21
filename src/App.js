@@ -10,9 +10,10 @@ import Contact from './components/Contact';
 import Login from './components/Login';
 
 import { 
-  BrowserRouter as Router, 
+  HashRouter as Router, 
   Route,
-  Switch   
+  Switch,
+  Redirect
 } from 'react-router-dom';
 
 function App() {
@@ -24,12 +25,16 @@ function App() {
           {/* all components */} 
           <div>
             <Switch>
-              <Route exact path='/' component={Home}></Route>
-              <Route exact path='/home' component={Home}></Route>
-              <Route exact path='/services' component={Services}></Route>
-              <Route exact path='/about' component={About}></Route>
-              <Route exact path='/contact' component={Contact}></Route>
-              <Route exact path='/login' component={Login}></Route>
+              <Route exact path="/">
+                  <Redirect to="/login" />
+              </Route>
+
+              <Route path='/' component={Home}></Route>
+              <Route path='/home' component={Home}></Route>
+              <Route path='/services' component={Services}></Route>
+              <Route path='/about' component={About}></Route>
+              <Route path='/contact' component={Contact}></Route>
+              <Route path='/login' component={Login}></Route>
             </Switch>
           </div>
 
