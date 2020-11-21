@@ -26,19 +26,18 @@ function App() {
           <div>
             <Switch>
               <Route exact path="/react-boilerplate">
-                <Redirect to="/login" />
+                <Redirect to="/react-boilerplate/login" />
               </Route>
 
               <Route exact path="/">
-                <Redirect to="/login" />
+                <Redirect to="/react-boilerplate/login" />
               </Route>
 
-              <Route path='/' component={Home}></Route>
-              <Route path='/home' component={Home}></Route>
-              <Route path='/services' component={Services}></Route>
-              <Route path='/about' component={About}></Route>
-              <Route path='/contact' component={Contact}></Route>
-              <Route path='/login' component={Login}></Route>
+              <Route path='/react-boilerplate/home' component={Home}></Route>
+              <Route path='/react-boilerplate/services' component={Services}></Route>
+              <Route path='/react-boilerplate/about' component={About}></Route>
+              <Route path='/react-boilerplate/contact' component={Contact}></Route>
+              <Route path='/react-boilerplate/login' component={Login}></Route>
             </Switch>
           </div>
 
