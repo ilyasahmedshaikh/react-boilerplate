@@ -20,11 +20,11 @@ function Header() {
                         <div className="col-sm-8 col-md-8 col-lg-8">
                             <div className="nav">
                                  <ul>
-                                    <li><Link to="/home">Home</Link></li>
-                                    <li><Link to="/services">Services</Link></li>
-                                    <li><Link to="/about">About</Link></li>
-                                    <li><Link to="/contact">Contact</Link></li>
-                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to={process.env.PUBLIC_URL + '/home'}>Home</Link></li>
+                                    <li><Link to={process.env.PUBLIC_URL + '/services'}>Services</Link></li>
+                                    <li><Link to={process.env.PUBLIC_URL + '/about'}>About</Link></li>
+                                    <li><Link to={process.env.PUBLIC_URL + '/contact'}>Contact</Link></li>
+                                    <li><Link to={process.env.PUBLIC_URL + '/login'}>Login</Link></li>
                                  </ul>
                             </div>
                         </div>

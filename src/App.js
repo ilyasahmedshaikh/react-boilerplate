@@ -10,7 +10,7 @@ import Contact from './components/Contact';
 import Login from './components/Login';
 
 import { 
-  HashRouter as Router, 
+  BrowserRouter as Router, 
   Route,
   Switch,
   Redirect
@@ -25,20 +25,20 @@ function App() {
           {/* all components */} 
           <div>
             <Switch>
-              <Route exact path="/react-boilerplate">
-                <Redirect to="/login" />
+              <Route exact path={process.env.PUBLIC_URL + '/react-boilerplate'}>
+                <Redirect to={process.env.PUBLIC_URL + '/login'} />
               </Route>
 
               <Route exact path="/">
-                <Redirect to="/login" />
+                <Redirect to={process.env.PUBLIC_URL + '/login'} />
               </Route>
 
-              <Route exact path='/' component={Home}></Route>
-              <Route exact path='/home' component={Home}></Route>
-              <Route exact path='/services' component={Services}></Route>
-              <Route exact path='/about' component={About}></Route>
-              <Route exact path='/contact' component={Contact}></Route>
-              <Route exact path='/login' component={Login}></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/home'} component={Home}></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/services'} component={Services}></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/about'} component={About}></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/contact'} component={Contact}></Route>
+              <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login}></Route>
             </Switch>
           </div>
 
