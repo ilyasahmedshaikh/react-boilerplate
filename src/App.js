@@ -29,12 +29,12 @@ function App() {
                 <Redirect to="/login" />
               </Route>
 
-              <Route path='/' component={Home}></Route>
-              <Route path='/home' component={Home}></Route>
-              <Route path='/services' component={Services}></Route>
-              <Route path='/about' component={About}></Route>
-              <Route path='/contact' component={Contact}></Route>
-              <Route path='/login' component={Login}></Route>
+              <Route exact path='/' component={Home}></Route>
+              <Route exact path='/home' component={Home}></Route>
+              <Route exact path='/services' component={Services}></Route>
+              <Route exact path='/about' component={About}></Route>
+              <Route exact path='/contact' component={Contact}></Route>
+              <Route exact path='/login' component={Login}></Route>
             </Switch>
           </div>
 
