@@ -16,36 +16,72 @@ import {
   Redirect
 } from 'react-router-dom';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Header />
-          
-          {/* all components */} 
-          <div>
-            <Switch>
-              <Route exact path={process.env.PUBLIC_URL + '/react-boilerplate'}>
-                <Redirect to={process.env.PUBLIC_URL + '/login'} />
-              </Route>
+import { connect } from "react-redux";
 
-              <Route exact path="/">
-                <Redirect to={process.env.PUBLIC_URL + '/login'} />
-              </Route>
+import {
+  GetUsers
+} from "./redux/actions/taskAction";
 
-              <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}></Route>
-              <Route exact path={process.env.PUBLIC_URL + '/home'} component={Home}></Route>
-              <Route exact path={process.env.PUBLIC_URL + '/services'} component={Services}></Route>
-              <Route exact path={process.env.PUBLIC_URL + '/about'} component={About}></Route>
-              <Route exact path={process.env.PUBLIC_URL + '/contact'} component={Contact}></Route>
-              <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login}></Route>
-            </Switch>
-          </div>
+class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
 
-        <Footer />
-      </div>
-    </Router>
-  );
+    this.state = {
+    }
+  }
+
+  componentDidMount() {
+    // making all API calls and store in the redux-store
+    this.props.GetUsers();
+  }
+
+  render() {
+    console.log("this.props.tasksss ", this.props.Loading);
+
+    return (
+      <Router>
+        <div className="App">
+          <Header />
+            
+            {/* all components */} 
+            <div>
+              <Switch>
+                <Route exact path={process.env.PUBLIC_URL + '/react-boilerplate'}>
+                  <Redirect to={process.env.PUBLIC_URL + '/login'} />
+                </Route>
+  
+                <Route exact path="/">
+                  <Redirect to={process.env.PUBLIC_URL + '/login'} />
+                </Route>
+  
+                <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}></Route>
+                <Route exact path={process.env.PUBLIC_URL + '/home'} component={Home}></Route>
+                <Route exact path={process.env.PUBLIC_URL + '/services'} component={Services}></Route>
+                <Route exact path={process.env.PUBLIC_URL + '/about'} component={About}></Route>
+                <Route exact path={process.env.PUBLIC_URL + '/contact'} component={Contact}></Route>
+                <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login}></Route>
+              </Switch>
+            </div>
+  
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  Loading: state.task.loading
+});
+
+const mapDispacthToProps = dispatch => {
+  return {
+    GetUsers: () => dispatch(GetUsers())    
+  };
+
+};
+export default connect(
+  mapStateToProps,
+  mapDispacthToProps
+)(App);
