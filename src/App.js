@@ -25,6 +25,10 @@ function App() {
           {/* all components */} 
           <div>
             <Switch>
+              <Route exact path="/react-boilerplate">
+                <Redirect to="/login" />
+              </Route>
+
               <Route exact path="/">
                 <Redirect to="/login" />
               </Route>
